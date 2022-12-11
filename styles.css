@@ -1,0 +1,50 @@
+ @font-face {
+     font-family: bungeeoutline;
+     src: url(BungeeOutline-Regular.ttf);
+ }
+
+ @font-face {
+     font-family: barlowsemicondensed;
+     src: url(BarlowSemiCondensed-Light.ttf);
+ }
+
+ nav {}
+
+ body {
+     font-family: barlowsemicondensed;
+     background-color: grey;
+     margin: 0;
+ }
+
+ .bakgrund {
+     background-image: url(images/cherriegron.jpg);
+     background-size: contain;
+     background-repeat: no-repeat;
+     margin: auto;
+
+
+ }
+
+ .ladan {
+     background-color: rgba(0, 0, 0, 0.5);
+     border-radius: 10px;
+
+
+
+ }
+
+ main {
+     border: 1px solid white;
+     padding: 3px;
+ }
+
+ #sherihan {}
+
+
+ ] article {}
+
+ h1 {
+     font-family: bungeeoutline;
+ }
+
+ h2 {}
