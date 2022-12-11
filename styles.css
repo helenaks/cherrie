@@ -8,30 +8,79 @@
      src: url(BarlowSemiCondensed-Light.ttf);
  }
 
- nav {}
-
  body {
+     background-image: url(images/cherrie1\(1\).jpg);
+     background-size: cover;
+     background-repeat: no-repeat;
+     background-attachment: fixed;
      font-family: barlowsemicondensed;
      background-color: grey;
      margin: 0;
  }
 
+ nav {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     width: 95%;
+     margin: 50px auto;
+     margin-bottom: 70px;
+ }
+
+ .navbar {
+     display: flex;
+     background-color: rgba(116, 116, 116, 0.5);
+     width: 25%;
+     padding: 10px;
+     margin: 2px;
+     border-radius: 5px;
+     font-size: 25px;
+     align-items: center;
+     justify-content: center;
+     flex-grow: 1;
+
+ }
+
+ .navbar:first-of-type {
+     cursor: pointer;
+     color: white;
+     background-color: rgba(0, 0, 0, 0.3);
+ }
+
+ .navbar:nth-of-type(3) {
+     cursor: pointer;
+     color: white;
+     background-color: rgba(0, 0, 0, 0.3);
+ }
+
+ .navbar:nth-of-type(4) {
+     cursor: pointer;
+     color: white;
+     background-color: rgba(0, 0, 0, 0.3);
+ }
+
+ .marked {
+
+     color: black;
+     padding: 12px 0;
+     font-weight: bold;
+     border: 1px solid white;
+     box-shadow: 0 0 10px white;
+ }
+
+
  .bakgrund {
-     background-image: url(images/cherriegron.jpg);
-     background-size: contain;
-     background-repeat: no-repeat;
-     margin: auto;
+     width: 90%;
+     background-color: rgba(0, 0, 0, 0.3);
+     border: 1px solid white;
+     border-radius: 20px;
+     margin: 70px auto;
 
 
  }
 
- .ladan {
-     background-color: rgba(0, 0, 0, 0.5);
-     border-radius: 10px;
 
 
-
- }
 
  main {
      border: 1px solid white;
