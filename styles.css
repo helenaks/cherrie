@@ -30,20 +30,20 @@
  main {
      display: flex;
      flex-direction: column;
-     border: white 1px solid;
-     border-radius: 25px;
-     padding: 20px;
-     margin: 10px;
-     margin-bottom: 40px;
-     background-color: rgba(0, 0, 0, 0.3);
+
  }
-
-
 
  .title {
      font-size: 80px;
      color: white;
  }
+
+ footer {
+     color: white;
+     margin-left: 10px;
+ }
+
+ /*navigations knappar*/
 
  nav {
      display: flex;
@@ -97,15 +97,22 @@
      box-shadow: 0 0 10px white;
  }
 
+ /*album lådor*/
+
  .album_description {
      text-align: left;
  }
 
-
- .best {
+ #sherihan {
      display: grid;
      grid-template-columns: repeat(7, 1fr);
      color: rgb(242, 236, 236);
+     border: white 1px solid;
+     border-radius: 25px;
+     padding: 20px;
+     margin: 10px;
+     margin-bottom: 40px;
+     background-color: rgba(0, 0, 0, 0.3);
  }
 
  .album_data {
@@ -114,6 +121,7 @@
 
  }
 
+ /*album bilder*/
 
  .cover {
      grid-column: 5/span 7;
@@ -126,13 +134,7 @@
      background-repeat: no-repeat;
  }
 
- .firstcover {
-     background-colour: brown;
-
- }
-
  .firstcover:hover {
-
      background-size: cover;
  }
 
@@ -158,11 +160,14 @@
      opacity: 1;
  }
 
+ /*sånglista lådorna*/
+
  .song_list {
      grid-column: 5/span 7;
      display: grid;
      grid-template-columns: repeat(2, 1fr);
      gap: 10px;
+     color: rgb(27, 25, 25);
  }
 
  .side-one {
@@ -190,7 +195,7 @@
      width: 100%;
      height: 100%;
      border-radius: 0 0 0 25px;
-     background-color: rgb(173, 162, 162);
+     background-color: rgb(133, 122, 122);
      margin-top: 10px;
      font-size: smaller;
      text-align: start;
@@ -210,15 +215,131 @@
 
  .song_list h2 {
      margin-left: 7px;
-
  }
 
  .song_list ul {
      list-style: conic-gradient;
+ }
+
+
+ /*anecdotes*/
+
+ .anecdotes {
+     grid-column: 1/span 6;
+     grid-row: 3/4;
+     gap: 10px;
+     display: grid;
+     grid-template-columns: repeat(7, 1fr);
+     padding-left: 0px;
+     margin-top: 10px;
+     color: rgb(27, 25, 25)
+ }
+
+ .anecdotes li {
+
+     font-weight: bold;
+     height: 20vw;
+     display: flex;
+     padding: 20px;
+ }
+
+ .anecdotes li:first-of-type {
+     border-radius: 25px 0 25px 25px;
+     background-color: rgb(129, 74, 74);
 
  }
 
- #sherihan {}
+ .top_right_90 {
+     grid-column: 1/2;
+     align-items: center;
+ }
+
+ .empty {
+     grid-column: 2/3;
+     grid-row: 1;
+     opacity: 0;
+ }
+
+
+
+ .image {
+     width: 100%;
+ }
+
+ .image_1 {
+     border-radius: 0 25px 25px 25px;
+     background-image: url(images/cherriek27.jpg);
+     background-size: cover;
+     background-repeat: no-repeat;
+     background-position: center;
+     align-items: end;
+     width: 100px;
+     color: rgb(129, 74, 74);
+     text-shadow: 1px 1px 2px black;
+     grid-column: 6;
+     grid-row: 1;
+
+
+ }
+
+ .bottom_right_90 {
+     border-radius: 25px 25px 0 25px;
+     color: rgb(27, 25, 25);
+     align-items: center;
+ }
+
+ .two_wide {}
+
+ .two_wide {
+     border-radius: 25px 25px 25px 0;
+     background-color: rgb(129, 74, 74);
+     grid-column: 3/ span 3;
+     grid-row: 1;
+     color: rgb(27, 25, 25);
+     align-items: center;
+     padding: 10px;
+ }
+
+ .bottom_right_90 {
+     background-color: rgb(129, 74, 74);
+     border-radius: 25px 25px 0 25px;
+     color: rgb(27, 25, 25);
+     align-items: center;
+     grid-column: 6;
+     grid-row: 1;
+ }
+
+ .image_2 {
+     background-image: url(images/cherriepontus.jpg);
+     background-size: cover;
+     background-position: center;
+     color: white;
+     border-radius: 0 25px 25px 25px;
+     background-repeat: no-repeat;
+     align-items: end;
+     width: 100px;
+     color: rgb(129, 74, 74);
+     text-shadow: 1px 1px 2px black;
+     grid-column: 4/span 4;
+     grid-row: 1;
+ }
+
+ #naagnool {
+     display: grid;
+     grid-template-columns: repeat(7, 1fr);
+     color: rgb(242, 236, 236);
+     border: white 1px solid;
+     border-radius: 25px;
+     padding: 20px;
+     margin: 10px;
+     margin-bottom: 40px;
+     background-color: rgba(0, 0, 0, 0.3);
+
+ }
+
+ .two_wide .bottom_left_90 {}
+
+
 
 
  article {}
@@ -228,8 +349,3 @@
  }
 
  h2 {}
-
- footer {
-     color: white;
-     margin-left: 10px;
- }
