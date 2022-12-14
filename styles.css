@@ -1,11 +1,26 @@
 @font-face {
-    font-family: bungeeoutline;
+    font-family: bungee-shade;
+    src: url(BungeeShade-Regular.ttf);
+}
+
+@font-face {
+    font-family: bungee-regular;
     src: url(BungeeOutline-Regular.ttf);
 }
 
 @font-face {
-    font-family: barlowsemicondensed;
-    src: url(BarlowSemiCondensed-Light.ttf);
+    font-family: barlow;
+    src: url(BarlowCondensed-ExtraLight.ttf);
+}
+
+@font-face {
+    font-family: barlowbold;
+    src: url(BarlowCondensed-Bold.ttf);
+}
+
+:root {
+    margin: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -13,36 +28,38 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    font-family: barlowsemicondensed;
+    background-position: center;
+    font-size: 1.5vw;
     background-color: grey;
-    margin: 0;
+    margin: 100px 4vw 100px 4vw;
+    font-family: barlow;
 }
 
 .bakgrund {
-    width: 90%;
+    margin: 100px auto;
     background-color: rgba(0, 0, 0, 0.2);
     border-radius: 20px;
-    margin: 70px auto;
-    padding: 10px;
+    padding: 30px;
 }
 
 main {
     display: flex;
     flex-direction: column;
-
 }
 
-.title {
-    font-size: 80px;
-    color: white;
+header h1 {
+    font-family: bungee-shade;
+    font-size: 5vw;
+    margin-bottom: 60px;
 }
 
 footer {
+    margin-top: 50px;
+    margin-bottom: -10px;
     color: white;
-    margin-left: 10px;
 }
 
-/*navigations knappar*/
+/* Navigations-bar*/
 
 nav {
     display: flex;
@@ -54,22 +71,31 @@ nav {
 }
 
 .navbar {
-    display: flex;
+    font-size: 20px;
     background-color: rgba(116, 116, 116, 0.5);
-    width: 25%;
-    padding: 10px;
+    width: 400px;
+    height: 50px;
     margin: 2px;
-    border-radius: 5px;
-    font-size: 25px;
-    align-items: center;
-    justify-content: center;
+    border-radius: 10px;
+    color: black;
+    font-family: barlow;
+    display: flex;
     flex-grow: 1;
+    justify-content: center;
+    align-items: center;
 }
 
 .navbar:first-of-type {
     cursor: pointer;
     color: black;
     background-color: rgba(225, 211, 211, 0.3);
+}
+
+.navbar:nth-of-type(2) {
+    font-family: barlowbold;
+    border: 1px solid white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px white;
 }
 
 .navbar:nth-of-type(3) {
@@ -84,57 +110,65 @@ nav {
     background-color: rgba(225, 211, 211, 0.3);
 }
 
-.navbar:hover {
-    background-color: rgba(116, 116, 116, 0.5);
-}
-
 .marked {
     color: black;
-    padding: 12px 0;
+
     font-weight: 900;
     border: 1px solid white;
     box-shadow: 0 0 10px white;
 }
 
-/*album lådor*/
-
-.album_description {
-    text-align: left;
+.navbar:hover {
+    background-color: rgba(116, 116, 116, 0.5);
 }
 
-#sherihan {
+article {
+    margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    padding: 20px;
+    border: 1px solid lightgrey;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.best {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    color: rgb(242, 236, 236);
-    border: white 1px solid;
-    border-radius: 25px;
-    padding: 20px;
-    margin: 10px;
-    margin-bottom: 40px;
-    background-color: rgba(0, 0, 0, 0.3);
 }
+
+.album-title {
+    font-family: bungee-regular;
+    font-size: 2.3vw;
+}
+
+.datum {
+    font-family: barlowbold;
+    font-size: 1.7vw;
+}
+
+.song_list ul {
+    list-style: conic-gradient;
+    margin-left: -20px;
+}
+
+.song_list h2 {
+    margin-left: 5px;
+}
+
+/* album-bilder*/
 
 .album_data {
-    grid-column: 1/span 4;
+    grid-column: 1/4;
     margin-right: 20px;
-
 }
 
-/*album bilder*/
+.album_data p {
+    margin-top: 50px;
+}
 
 .cover {
-    grid-column: 5/span 7;
+    grid-column: 4/7;
     position: relative;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
-    width: 100%;
-    height: 300px;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-.firstcover:hover {
-    background-size: cover;
 }
 
 .show_hover {
@@ -148,101 +182,77 @@ nav {
     position: absolute;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: 175px;
     border-radius: 25px 25px 0 0;
     left: 0;
     opacity: 0;
-    transition: all 0.7s ease;
+    transition: all 0.9s ease;
 }
 
 .show_not_hover:hover {
     opacity: 1;
 }
 
-/*sånglista lådorna*/
-
-.song_list {
-    grid-column: 5/span 7;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    color: rgb(27, 25, 25);
-}
-
-.side-one {
-    width: 100%;
-    height: 100%;
-    border-radius: 0 0 0 25px;
-    background-color: rgb(129, 74, 74);
-    margin-top: -10px;
-    font-size: smaller;
-    padding: 10px 0 10px 0;
-}
-
-.side-two {
-    width: 100%;
-    height: 100%;
-    border-radius: 0 0 25px 0;
-    background-color: rgb(129, 74, 74);
-    margin-top: -10px;
-    font-size: smaller;
-    text-align: start;
-    padding: 10px 0 10px 0;
-}
-
-.side-three {
-    width: 100%;
-    height: 100%;
-    border-radius: 0 0 0 25px;
-    background-color: rgb(133, 122, 122);
-    margin-top: 10px;
-    font-size: smaller;
-    text-align: start;
-}
-
-.side-four {
-    width: 100%;
-    height: 100%;
-    border-radius: 0 0 25px 0;
-    background-color: rgb(133, 122, 122);
-    margin-top: 10px;
-    font-size: smaller;
-    text-align: start;
-}
-
-.song_list h2 {
-    margin-left: 7px;
-}
-
-.song_list ul {
-    list-style: conic-gradient;
-}
-
-
-/*anecdotes*/
+/* Sherihan*/
 
 .anecdotes {
-    grid-column: 1/span 7;
+    grid-column: 1/span 6;
     grid-row: 3/4;
     gap: 10px;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     padding-left: 0px;
-    margin-top: 10px;
-    color: rgb(27, 25, 25);
-    margin-top: 40px;
+    margin-top: 30px;
 }
 
 .anecdotes li {
+    background-color: rgb(129, 74, 74);
     font-weight: bold;
-    height: 30vh;
+    height: 25vw;
     display: flex;
     padding: 20px;
 }
 
+.anecdotes li:first-of-type {
+    border-radius: 25px 0 25px 25px;
+    color: black;
+    align-items: center;
+}
+
+.anecdotes li:nth-of-type(3) {
+    border-radius: 25px 25px 25px 0;
+    color: black;
+    align-items: center;
+}
+
+.anecdotes li .image {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+}
+
+.image_1 {
+    border-radius: 0 25px 25px 25px;
+    background-image: url(images/cherriek27.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    align-items: center;
+    color: black;
+    text-shadow: rgba(240, 169, 169, 0.897) 1px 0 10px;
+}
+
+/* lådorna */
+
+.bottom_right_90 {
+    border-radius: 25px 25px 0 25px;
+    color: black;
+    align-items: center;
+}
 
 .top_right_90 {
     grid-column: 1/2;
+    color: black;
     align-items: center;
 }
 
@@ -252,149 +262,428 @@ nav {
     opacity: 0;
 }
 
-.image {
-    width: 100%;
-}
-
-.box1 {
-    grid-column: 1/ span 1;
-    background-color: rgb(129, 74, 74);
-    border-radius: 25px 0 25px 25px;
-    ;
-}
-
-.box2 {
-    width: 70%;
-    grid-column: 3;
-
-}
-
-.box3 {
-    grid-column: 4/ span 4;
-    border-radius: 0 25px 25px 25px;
-}
-
-.box4 {
-    grid-column: 6;
-}
-
-.image_1 {
-    background-image: url(images/cherriek27.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 80%;
-    grid-column: 4/span 4;
-    color: rgb(129, 74, 74);
-    text-shadow: 1px 1px 2px black;
-}
-
-.bottom_right_90 {
-    border-radius: 25px 25px 0 25px;
-    color: rgb(27, 25, 25);
-    align-items: center;
-}
-
 .two_wide {
-    border-radius: 25px 25px 25px 0;
-    background-color: rgb(129, 74, 74);
-    grid-column: 3/ span 2;
+    grid-column: 3/5;
     grid-row: 1;
-    color: rgb(27, 25, 25);
+    color: #000000;
     align-items: center;
     padding: 10px;
 }
 
-.bottom_right_90 {
+.song_list {
+    grid-column: 4/7;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.song_list div {
     background-color: rgb(129, 74, 74);
-    border-radius: 25px 25px 0 25px;
-    color: rgb(27, 25, 25);
-    align-items: center;
-    grid-column: 6;
-    grid-row: 1;
+    padding: 1vw 2vw;
+    list-style-position: inside;
+    color: black;
 }
 
-.top_left_90 {
-    grid-row: 1;
-    grid-column: 5;
-    align-items: center;
+.song_list>div:first-of-type {
+    border-radius: 0 0 0 25px;
+}
+
+.song_list>div:last-of-type {
+    border-radius: 0 0 25px 0;
+}
+
+/*Naag nool*/
+
+#nagnool .best {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    position: relative;
+}
+
+.anecdotes2 li {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    padding-left: 0px;
+    margin-top: 10px;
     background-color: rgb(133, 122, 122);
+    font-weight: bold;
+    height: 25vw;
 
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
 
-
-.top_left_901 {
-    grid-row: 1;
+.anecdotes2 li:nth-of-type(1) {
     grid-column: 1/3;
-    align-items: center;
-    background-color: rgb(133, 122, 122);
-
-
-}
-
-
-.bottom_right_901 {
-    background-color: rgb(133, 122, 122);
-    grid-column: 6;
-    margin-top: 20px;
-    border-radius: 0 25px 25px 25px;
-    grid-row: 1;
-}
-
-
-.lada1 {
-    background-color: rgb(133, 122, 122);
-    grid-column: 1/3;
+    color: black;
     border-radius: 25px 25px 25px 0;
-    margin-top: 20px;
 }
 
-.lada2 {
-    background-color: rgb(133, 122, 122);
-    grid-column: 3;
-    margin-top: 20px;
+.anecdotes2 li:nth-of-type(2) {
+    color: black;
     border-radius: 0 25px 25px 25px;
 }
 
-.lada4 {
-    grid-column: 7;
-    background-color: rgb(133, 122, 122);
-    margin-top: 20px;
+.anecdotes2 li:nth-of-type(5) {
+    grid-column: 4/6;
+    border-radius: 0 25px 25px 25px;
+    display: flex;
+    justify-content: end;
+    align-items: end;
 }
 
 .image_2 {
     background-image: url(images/cherriepontus.jpg);
     background-size: cover;
     background-position: center;
-    color: white;
-    border-radius: 0 25px 25px 25px;
-    background-repeat: no-repeat;
-    align-items: end;
-    width: 55%;
-    color: rgb(129, 74, 74);
-    text-shadow: 1px 1px 2px black;
-    grid-column: 4 / span 3;
-    grid-row: 1;
-    margin-top: 20px;
+    color: black;
+    text-shadow: rgba(240, 169, 169, 0.897) 1px 0 10px;
 }
 
-#naagnool {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    color: rgb(242, 236, 236);
-    border: white 1px solid;
-    border-radius: 25px;
-    padding: 20px;
-    margin: 10px;
-    margin-bottom: 40px;
-    background-color: rgba(0, 0, 0, 0.3);
+.album2 {
+    background-color: rgb(133, 122, 122) !important;
 }
 
 
+/*media queries*/
 
-h1 {
-    font-family: bungeeoutline;
+@media (min-width: 1111px) {
+    body {
+        font-size: 16.65px;
+    }
+
+    .album_data h1 {
+        font-size: 25.5px;
+    }
+
+    .album_data h2 {
+        font-size: 55.5px;
+    }
 }
 
-h2 {}
+@media (max-width: 900px) {
+    body {
+        font-size: 13.5px;
+    }
+
+    .album_data h1 {
+        font-size: 20.7px;
+    }
+
+    .album_data h2 {
+        font-size: 15.3px;
+    }
+
+    header h1 {
+        font-size: 4vw;
+    }
+}
+
+@media (max-width: 854px) {
+    header h1 {
+        font-size: 75;
+    }
+}
+
+@media (max-width: 800px) {
+
+    .best {
+        grid-template-columns: repeat(7, 1fr);
+    }
+
+    header h1 {
+        text-align: center;
+        font-size: 70px;
+    }
+
+    .bakgrund {
+        padding: 16px;
+    }
+
+    article {
+        padding: 12px;
+    }
+
+    .cover {
+        grid-row: 1;
+        grid-column: 1/5;
+    }
+
+    .show_hover {
+        border-radius: 20px 0 0 20px;
+    }
+
+    .show_not_hover {
+        display: none;
+    }
+
+    .show_not_hover:hover {
+        display: none;
+    }
+
+    .song_list {
+        grid-row: 1;
+        grid-column: 5/8;
+        display: flex;
+        flex-direction: column;
+        margin-top: 0;
+        margin-left: 10px;
+        font-size: 13px;
+    }
+
+    .song_list div {
+
+        padding-top: 15px;
+    }
+
+    .song_list>div:first-child {
+        border-radius: 0 20px 0 0;
+        padding-bottom: 15px;
+        flex-grow: 1;
+    }
+
+    .song_list h2 {
+        font-size: 24px;
+    }
+
+
+
+    .album_data {
+        grid-column: 1/8;
+    }
+
+    .album_data h1 {
+        font-size: 45px;
+        padding-top: 10px;
+    }
+
+    .album_data h2 {
+        font-size: 25px;
+    }
+
+    .album_data p {
+        font-size: 16px;
+    }
+
+    .album_data ul {
+        font-size: 16px;
+    }
+
+    .anecdotes {
+        grid-column: 1/span 8;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .image_1 {
+        grid-row: 2;
+        grid-column: 2/3;
+    }
+
+    .anecdotes li:nth-of-type(1) {
+        grid-column: 1 / 2;
+    }
+
+    .anecdotes li:nth-of-type(7) {
+        grid-column: 3 / 4;
+        grid-row: 2;
+    }
+
+    .empty {
+        grid-column: 3 / 4;
+    }
+
+    .anecdotes2 li:first-of-type {
+        grid-column: 1 / 3;
+        grid-row: 1;
+    }
+
+    .anecdotes2 li:nth-of-type(2) {
+        grid-column: 3 / 4;
+        grid-row: 1;
+    }
+
+    .anecdotes2 li:nth-of-type(5) {
+        grid-column: 2 / 4;
+        grid-row: 2;
+    }
+
+    .anecdotes2 li:nth-of-type(6) {
+        grid-column: 4 / 5;
+        grid-row: 2;
+    }
+}
+
+@media (max-width: 739px) {}
+
+@media (max-width: 596px) {
+
+    .anecdotes {
+        font-size: 2.1vw;
+    }
+
+    header h1 {
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 500px) {
+    :root {
+        margin-top: 0;
+    }
+
+    body {
+        margin-top: auto;
+        margin-bottom: 10px;
+        padding-top: 0;
+
+    }
+
+    main {
+        gap: 10px;
+    }
+
+    header h1 {
+        font-size: 40px;
+    }
+
+    .best {
+        grid-template-columns: 1fr;
+    }
+
+    .bakgrund {
+        padding: 0;
+        border-radius: 0;
+        margin: 0;
+        overflow: hidden;
+    }
+
+    /*
+    .master {
+        padding: 0;
+    }
+*/
+    nav {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    article {
+        margin: auto 20px;
+    }
+
+    .song_list {
+        grid-row: 2;
+        grid-column: 1;
+        display: flex;
+        flex-direction: row;
+        margin-left: 0;
+    }
+
+
+
+    .song_list div {
+        padding-top: 15px;
+        padding-bottom: 20px;
+        font-size: 14px;
+        flex-basis: 200px;
+        margin-top: 10px;
+    }
+
+    .song_list div:nth-of-type(1) {
+        border-radius: 0 0 0 20px;
+    }
+
+    .song_list div:nth-of-type(2) {
+        border-radius: 0 0 20px 0;
+    }
+
+    .cover {
+        grid-row: 1;
+        grid-column: 1;
+    }
+
+    .show_hover {
+        border-radius: 20px 20px 0 0;
+        padding-bottom: 10px;
+    }
+
+    .album_data {
+        grid-row: 3;
+    }
+
+    .album_data h1 {
+        font-size: 35px;
+    }
+
+    .album_data h2 {
+        font-size: 22px;
+    }
+
+    .album_data p {
+        font-size: 17px;
+    }
+
+    .album_data ul {
+        font-size: 17px;
+    }
+
+    .anecdotes {
+        grid-row: 4;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5px;
+        font-size: 15px;
+    }
+
+    .anecdotes li {
+        height: 23vh;
+    }
+
+    .anecdotes li:first-of-type {
+        font-size: 13.5px;
+    }
+
+    .anecdotes li:nth-of-type(3) {
+        grid-column: 2/4;
+        grid-row: 1;
+        width: 35vw;
+    }
+
+    .image_1 {
+        grid-row: 2;
+        grid-column: 1/3;
+    }
+
+    .anecdotes2 li {
+        margin-top: 0;
+
+    }
+
+    .anecdotes2 li:nth-of-type(1) {
+        grid-column: 1/3;
+        grid-row: 1;
+    }
+
+    .anecdotes2 li:nth-of-type(2) {
+        grid-column: 3/4;
+        grid-row: 1;
+        font-size: 13px;
+    }
+
+    .anecdotes2 li:nth-of-type(5) {
+        grid-column: 1/3;
+        grid-row: 2;
+    }
+
+    .anecdotes2 li:nth-of-type(6) {
+        grid-column: 3/4;
+    }
+
+    footer {
+        margin-left: 20px;
+        margin-bottom: 10px;
+    }
+
+}
