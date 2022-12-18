@@ -10,7 +10,7 @@
 
 @font-face {
     font-family: barlow;
-    src: url(BarlowCondensed-ExtraLight.ttf);
+    src: url(BarlowSemiCondensed-Light.ttf)
 }
 
 @font-face {
@@ -20,7 +20,6 @@
 
 :root {
     margin: 0;
-    box-sizing: border-box;
 }
 
 body {
@@ -29,10 +28,10 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-    font-size: 1.5vw;
     background-color: grey;
-    margin: 100px 4vw 100px 4vw;
+    margin: 100px 5vw 100px 5vw;
     font-family: barlow;
+    font-size: 1.6vw;
 }
 
 .bakgrund {
@@ -51,10 +50,11 @@ header h1 {
     font-family: bungee-shade;
     font-size: 5vw;
     margin-bottom: 60px;
+    color: rgb(236, 224, 224);
 }
 
 footer {
-    margin-top: 50px;
+    margin-top: 10px;
     margin-bottom: -10px;
     color: white;
 }
@@ -65,7 +65,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 95%;
+    gap: 5px;
     margin: 50px auto;
     margin-bottom: 70px;
 }
@@ -73,13 +73,11 @@ nav {
 .navbar {
     font-size: 20px;
     background-color: rgba(116, 116, 116, 0.5);
-    width: 400px;
     height: 50px;
-    margin: 2px;
     border-radius: 10px;
     color: black;
-    font-family: barlow;
     display: flex;
+    flex-basis: 0;
     flex-grow: 1;
     justify-content: center;
     align-items: center;
@@ -112,7 +110,6 @@ nav {
 
 .marked {
     color: black;
-
     font-weight: 900;
     border: 1px solid white;
     box-shadow: 0 0 10px white;
@@ -127,7 +124,7 @@ article {
     background-color: rgba(0, 0, 0, 0.3);
     border-radius: 20px;
     padding: 20px;
-    border: 1px solid lightgrey;
+    border: 1px solid white;
     color: rgba(255, 255, 255, 0.8);
 }
 
@@ -138,12 +135,12 @@ article {
 
 .album-title {
     font-family: bungee-regular;
-    font-size: 2.3vw;
+    font-size: 3.3vw;
 }
 
 .datum {
     font-family: barlowbold;
-    font-size: 1.7vw;
+    font-size: 2.7vw;
 }
 
 .song_list ul {
@@ -182,11 +179,10 @@ article {
     position: absolute;
     width: 100%;
     height: 100%;
-    object-fit: 175px;
     border-radius: 25px 25px 0 0;
     left: 0;
     opacity: 0;
-    transition: all 0.9s ease;
+    transition: all 0.8s ease;
 }
 
 .show_not_hover:hover {
@@ -233,13 +229,13 @@ article {
 
 .image_1 {
     border-radius: 0 25px 25px 25px;
-    background-image: url(images/cherriek27.jpg);
+    background-image: url(images/k27.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    align-items: center;
+    align-items: end;
     color: black;
-    text-shadow: rgba(240, 169, 169, 0.897) 1px 0 10px;
+    text-shadow: rgb(255, 255, 255) 1px 0 10px;
 }
 
 /* lådorna */
@@ -305,11 +301,9 @@ article {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     padding-left: 0px;
-    margin-top: 10px;
     background-color: rgb(133, 122, 122);
     font-weight: bold;
     height: 25vw;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -340,7 +334,7 @@ article {
     background-size: cover;
     background-position: center;
     color: black;
-    text-shadow: rgba(240, 169, 169, 0.897) 1px 0 10px;
+    text-shadow: rgb(255, 255, 255) 1px 0 10px;
 }
 
 .album2 {
@@ -352,15 +346,19 @@ article {
 
 @media (min-width: 1111px) {
     body {
-        font-size: 16.65px;
+        font-size: 18px;
     }
 
     .album_data h1 {
-        font-size: 25.5px;
+        font-size: 37px;
     }
 
     .album_data h2 {
-        font-size: 55.5px;
+        font-size: 30px;
+    }
+
+    header {
+        font-size: 55px;
     }
 }
 
@@ -370,22 +368,27 @@ article {
     }
 
     .album_data h1 {
-        font-size: 20.7px;
+        font-size: 2.3vw;
     }
 
     .album_data h2 {
-        font-size: 15.3px;
+        font-size: 1.7vw;
     }
 
     header h1 {
-        font-size: 4vw;
+        font-size: 5vw;
     }
 }
 
-@media (max-width: 854px) {
-    header h1 {
-        font-size: 75;
+@media (min-width: 800px) and (max-width:900px) {
+    .album_data h1 {
+        font-size: 30px;
     }
+
+    .album_data h2 {
+        font-size: 24px;
+    }
+
 }
 
 @media (max-width: 800px) {
@@ -435,7 +438,6 @@ article {
     }
 
     .song_list div {
-
         padding-top: 15px;
     }
 
@@ -448,8 +450,6 @@ article {
     .song_list h2 {
         font-size: 24px;
     }
-
-
 
     .album_data {
         grid-column: 1/8;
@@ -492,7 +492,7 @@ article {
     }
 
     .empty {
-        grid-column: 3 / 4;
+        display: none;
     }
 
     .anecdotes2 li:first-of-type {
@@ -516,18 +516,7 @@ article {
     }
 }
 
-@media (max-width: 739px) {}
 
-@media (max-width: 596px) {
-
-    .anecdotes {
-        font-size: 2.1vw;
-    }
-
-    header h1 {
-        font-size: 50px;
-    }
-}
 
 @media (max-width: 500px) {
     :root {
@@ -538,7 +527,6 @@ article {
         margin-top: auto;
         margin-bottom: 10px;
         padding-top: 0;
-
     }
 
     main {
@@ -546,7 +534,7 @@ article {
     }
 
     header h1 {
-        font-size: 40px;
+        font-size: 70px;
     }
 
     .best {
@@ -560,11 +548,6 @@ article {
         overflow: hidden;
     }
 
-    /*
-    .master {
-        padding: 0;
-    }
-*/
     nav {
         margin-left: 20px;
         margin-right: 20px;
@@ -581,8 +564,6 @@ article {
         flex-direction: row;
         margin-left: 0;
     }
-
-
 
     .song_list div {
         padding-top: 15px;
@@ -648,7 +629,6 @@ article {
     .anecdotes li:nth-of-type(3) {
         grid-column: 2/4;
         grid-row: 1;
-        width: 35vw;
     }
 
     .image_1 {
@@ -658,7 +638,6 @@ article {
 
     .anecdotes2 li {
         margin-top: 0;
-
     }
 
     .anecdotes2 li:nth-of-type(1) {
